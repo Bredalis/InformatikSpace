@@ -11,7 +11,7 @@
     
     <header>
         <div>
-            <button class="animation" id="boton-inicio-seccion"><a href="Perfil.html">Iniciar Sesión</a></button>            
+            <button class="boton-inicio-seccion"><a href="Perfil.html">Iniciar Sesión</a></button>            
         	<a href="index.html"><h1>InformatikSpace</h1></a>
             <nav>
                 <ul>
@@ -27,74 +27,45 @@
     </header>
 
     <main>
-        <div class="introduccion">
+        <div class="intro">
             <h2>InformatikSpace</h2>
             <p>
                 Nuestra misión es establecer un espacio exclusivo para informáticos, donde tendrán la libertad de compartir todo lo que deseen sobre sí mismos o sobre el técnico.
             </p>
-            <img src="../IMG/Chica_Codeando.jpg" alt="Imagen de InformatikSpace" class="animation">
+            <img src="../IMG/Chica_Codeando.jpg" alt="Imagen de InformatikSpace" class="animacion">
         </div>
 
         <div class="quienes-somos">
             <h2>¿Quiénes <span>Somos</span>?</h2>
             <p>
-                InformatikSpace es una plataforma dedicada exclusivamente a estudiantes de informática de 4to, 5to y 6to grado de secundaria del Politécnico Sergio Augusto Beras. Nuestro objetivo es proporcionar un espacio donde los informáticos puedan compartir sus conocimientos, experiencias y proyectos con una comunidad que comparta sus mismos intereses y pasiones. <br><br> El Politécnico Sergio Augusto Beras es un liceo sitiado en la av. Manuela Diez Jimenez de El Seibo, donde se ense;an 3 tipos de tecnicos: Informatica, Enfermeria y Contabilidad.
+                InformatikSpace es una plataforma dedicada exclusivamente a estudiantes de informática de 4to, 5to y 6to grado de secundaria del Politécnico Sergio Augusto Beras. Nuestro objetivo es proporcionar un espacio donde los informáticos puedan compartir sus conocimientos, experiencias y proyectos con una comunidad que comparta sus mismos intereses y pasiones. <br><br> El Politécnico Sergio Augusto Beras es un liceo situado en la Av. Manuela Díez Jiménez de El Seibo, donde se enseñan tres tipos de técnicos: Informática, Enfermería y Contabilidad.
             </p>       
         </div>
 
         <div class="maestros">
             <h2>Maestros Del <span>Sergio Augusto Beras</span></h2>
-            <section>
-                <img src="../IMG/Perfil.jpg" alt="Rolando Lopéz">                
-                <p>
+            <br><br>
+
+            <section id="seccion">
+                <img src="../IMG/Perfil.jpg" alt="Rolando Lopéz" id="img">                
+                <p id="parrafo">
                     Lorem ipsum dolor sit, amet consectetur adipisicing, elit. In necessitatibus blanditiis cupiditate dicta maiores, eligendi ipsam error suscipit? Quam doloremque, totam unde ipsam libero ab magni illo ratione praesentium maiores.
-                    <br>
-                    <cite>Rolando Lopéz <br> Modulo: Analisis y Desarrollo de Sistema</cite>
                 </p>
+                <cite id="nombre">Rolando Lopéz</cite> 
+                <br>
+                <cite id="modulo"><span>Módulo</span>: Analisis y Desarrollo de Sistema</cite>
             </section>
 
-            <section>
-                <img src="../IMG/Perfil.jpg" alt="Lourdez Gonzales">                
-                <p>
-                    Lorem ipsum dolor sit, amet consectetur adipisicing, elit. In necessitatibus blanditiis cupiditate dicta maiores, eligendi ipsam error suscipit? Quam doloremque, totam unde ipsam libero ab magni illo ratione praesentium maiores.
-                    <br>
-                    <cite>Rolando Lopéz <br> Modulo: Analisis y Desarrollo de Sistema</cite>
-                </p>
-            </section>            
-
-            <section>
-                <img src="../IMG/Perfil.jpg" alt="Felix">                
-                <p>
-                    Lorem ipsum dolor sit, amet consectetur adipisicing, elit. In necessitatibus blanditiis cupiditate dicta maiores, eligendi ipsam error suscipit? Quam doloremque, totam unde ipsam libero ab magni illo ratione praesentium maiores.
-                    <br>
-                    <cite>Rolando Lopéz <br> Modulo: Analisis y Desarrollo de Sistema</cite>
-                </p>
-            </section>            
-
-            <section>
-                <img src="../IMG/Perfil.jpg" alt="Profesor4">
-                <p>
-                    Lorem ipsum dolor sit, amet consectetur adipisicing, elit. In necessitatibus blanditiis cupiditate dicta maiores, eligendi ipsam error suscipit? Quam doloremque, totam unde ipsam libero ab magni illo ratione praesentium maiores.
-                    <br>
-                    <cite>Rolando Lopéz <br> Modulo: Analisis y Desarrollo de Sistema</cite>
-                </p>
-            </section>            
-
-            <section>
-                <img src="../IMG/Perfil.jpg" alt="Profesor5">
-                <p>
-                    Lorem ipsum dolor sit, amet consectetur adipisicing, elit. In necessitatibus blanditiis cupiditate dicta maiores, eligendi ipsam error suscipit? Quam doloremque, totam unde ipsam libero ab magni illo ratione praesentium maiores.
-                    <br>
-                    <cite>Rolando Lopéz <br> Modulo: Analisis y Desarrollo de Sistema</cite>
-                </p>                
-            </section>
+            <br><br>
+            <img src="../IMG/Circulo_Izquierdo.svg" alt="Circulo Izquierdo" height="50" onclick="botonIzquierdo()">
+            <img src="../IMG/Circulo_Derecho.svg" alt="Circulo Derecho" height="50" onclick="botonDerecho()">
         </div>
         
         <div class="que-ofrecemos">
             <h2>¿Qué <span>Ofrecemos</span>?</h2>
             
-            <section class="animation">
-                <h3>Publicacion de Articulos</h3>
+            <section class="animacion">
+                <h3>Publicación de Artículos</h3>
                 <img src="../IMG/Articulos.jpg" alt="Articulos">
                 <br>                
 
@@ -104,7 +75,7 @@
             </section>
 
             <br>
-            <section class="animation">
+            <section class="animacion">
                 <h3>Perfil</h3>
                 <img src="../IMG/Perfil.jpg" alt="Perfil">
 
@@ -114,8 +85,8 @@
             </section>
 
             <br>
-            <section class="animation">
-                <h3>Busqueda Avanzada</h3>
+            <section class="animacion">
+                <h3>Búsqueda Avanzada</h3>
                 <img src="../IMG/Busqueda.jpg" alt="Busqueda Avanzada">
 
                 <p>
@@ -124,8 +95,8 @@
             </section>
 
             <br>
-            <section class="animation">
-                <h3>Seccion de Chatbots</h3>
+            <section class="animacion">
+                <h3>Sección de Chatbots</h3>
                 <img src="../IMG/Chatbot.jpg" alt="Chatbots">
                 <p>
                     Página dedicada a interactuar con chatbots especializados en informática. Ofrece respuestas automáticas y asistencia en temas específicos.
@@ -135,7 +106,7 @@
 
         <div class="union">
             <h2>Únete a los estudiantes <br> que son parte de InformatikSpace</h2>
-            <button class="animation"><a href="Perfil.html">Iniciar Sesión</a></button>          
+            <button class="animacion"><a href="Perfil.html">Iniciar Sesión</a></button>          
         </div>
     </main>
 
@@ -167,5 +138,6 @@
     </footer>
 
     <script src="../JS/main.js"></script>
+    <script src="../JS/Sobre_Nosotros.js"></script>
 </body>
 </html>
