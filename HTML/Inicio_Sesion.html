@@ -8,30 +8,40 @@
     <link rel="stylesheet" href="../CSS/Inicio_Sesion.css">
 </head>
 <body>
-    
-    <div>
+    <main>
+        <div class="primer-contenido">
+            <h1>InformatikSpace</h1>
+            <p>Únete a los estudiantes que son <br> parte de InformatikSpace</p>
 
-        <img src="" alt="">
+            <img src="../IMG/Inicio_Sesion.jpg" alt="Inicio Sesión">
+        </div>
 
-        <h2>InformatikSpace</h2>
-        <h1>Bienvenido a nuestro Blog</h1>
+        <form action="" method="POST" class="segundo-contenido">
+            <label for="correo">Correo Electrónico: <img src="../IMG/Correo.svg" alt="Email" height="25"></label>
+            <br><br>
+            <input type="email" id="correo" name="correo" placeholder="ej: ejemplo@gmail.com">
 
-        <form action="" method="POST">
-            <a href="">Google</a>
-            <a href="">Facebook</a>
+            <br><br>
+            <label for="contraseña">Contraseña: <img src="../IMG/Contraseña.svg" alt="Contraseña" height="25"></label>
+            <br><br>
+            <input type="password" id="contraseña" name="clave" placeholder="******">
 
-            <label for=""><img src="../IMG/Correo.svg" alt="Correo Electronico" height="30">Correo Electronico</label>
-            <input type="email" placeholder="Correo Electronico">
+            <br><br>
+            <input type="checkbox">Recuérdamela
 
-            <label for=""><img src="../IMG/Contraseña.svg" alt="Contraseña" height="30">Contraseña</label>
-            <input type="password" placeholder="Contraseña">  
+            <a href="" id="contraseña-olvidada">¿Olvidaste tu contraseña?</a>
 
-            <a href="">¿Olvidaste tu contraseña?</a>    
-
-            <button>Iniciar Sesion</button>
-            <p>¿No tienes cuenta? <a href="">Crea una</a></p>
+            <br><br>
+            <button><a href="">Iniciar Sesión</a></button>
         </form>
-    </div>
 
+        <div class="tercer-contenido">
+            <p>Otros metodos:</p>
+
+            <a href=""><img src="../IMG/Facebook.png" alt="Facebook" height="40"></a>
+            <a href=""><img src="../IMG/Google.png" alt="Google" height="40"></a>
+            <a href=""><img src="../IMG/GitHub.png" alt="GitHub" height="40"></a>
+        </div>
+    </main>
 </body>
 </html>

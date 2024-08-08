@@ -23,6 +23,7 @@ span {
     position: relative;
     top: 35px;
     left: 850px;
+    transition: background-color 0.3s ease;
 }
 
 .boton-inicio-seccion:hover {
@@ -255,7 +256,7 @@ footer p {
 	margin-bottom: -10px;
 }
 
-/* Animacion  */
+/* Animación  */
 @keyframes slide-up {
 	to {
 		opacity: 1;

@@ -5,6 +5,10 @@
 	text-align: center;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
 	font-family: Roboto, sans-serif;
 }
@@ -145,7 +149,7 @@ footer p {
 	margin-bottom: -10px;
 }
 
-/* Animacion  */
+/* Animación  */
 @keyframes slide-up {
 	to {
 		opacity: 1;

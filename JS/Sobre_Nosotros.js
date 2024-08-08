@@ -1,6 +1,5 @@
 
 // Conetidos de la seccion maestros
-
 const imgs = [
     "Perfil.jpg", "Perfil.jpg", "Perfil.jpg", 
     "Perfil.jpg", "Perfil.jpg"

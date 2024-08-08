@@ -5,6 +5,10 @@
     text-align: center;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     font-family: Roboto, sans-serif;
 }
@@ -19,6 +23,7 @@ span {
     position: relative;
     top: 35px;
     left: 850px;
+    transition: background-color 0.3s ease;
 }
 
 .boton-inicio-seccion:hover {
@@ -135,8 +140,13 @@ h2 {
     opacity: 0;
 }
 
+.maestros img {
+    transition: box-shadow 0.5s ease;
+}
+
 .maestros img:hover {
     cursor: pointer;
+    box-shadow: 0 0 10px rgba(97, 106, 107, 1);
 }
 
 .que-ofrecemos {
@@ -176,10 +186,11 @@ h2 {
     width: 15%;
     margin-bottom: 40px;
     margin-right: -45%;
+    transition: box-shadow 0.3s ease;
 }
 
 .union button:hover {
-    background-color: #eaeded;
+    box-shadow: 0 0 10px #eaeded;
 }
 
 .union button a {
