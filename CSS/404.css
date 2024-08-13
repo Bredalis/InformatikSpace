@@ -13,23 +13,24 @@ body {
 	font-family: Roboto, sans-serif;
 }
 
-div .boton-inicio-seccion {
+.boton-inicio-seccion {
 	background-color: #141413;
 	width: 15%;
 	position: relative;
 	top: 35px;
 	left: 850px;
+    transition: background-color 0.3s ease;
 }
 
-div .boton-inicio-seccion:hover {
+.boton-inicio-seccion:hover {
 	background-color: #616a6b;
 }
 
-div .boton-inicio-seccion a {
+.boton-inicio-seccion a {
 	color: whitesmoke;
 }
 
-div button {
+header div button {
 	background: none;
 	padding: 20px;
 	width: 10%;
@@ -37,7 +38,7 @@ div button {
 	margin-left: -50%;
 }
 
-div button img {
+header div button img {
   filter: invert(1) hue-rotate(180deg);
 }
 
@@ -57,11 +58,11 @@ button a {
 	font-size: 20px;
 }
 
-div a {
+header div a {
 	color: #141413;
 }
 
-div h1 {
+header div h1 {
 	font-size: 50px;
 }
 
@@ -100,6 +101,7 @@ main p {
 
 main button {
 	width: 10%;
+    transition: background-color 0.3s ease;
 }
 
 main button:hover {

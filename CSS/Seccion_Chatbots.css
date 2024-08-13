@@ -34,7 +34,7 @@ span {
     color: whitesmoke;
 }
 
-div button {
+header div button {
     background: none;
     padding: 20px;
     width: 10%;
@@ -42,7 +42,7 @@ div button {
     margin-left: -50%;
 }
 
-div button img {
+header div button img {
     filter: invert(1) hue-rotate(180deg);
 }
 
@@ -65,7 +65,7 @@ div a {
 	color: #141413;
 }
 
-div h1 {
+header div h1 {
 	font-size: 50px;
 }
 
@@ -91,7 +91,11 @@ p {
 	text-align: justify;
 }
 
-.intro p {
+#intro h1 {
+	font-size: 40px;
+}
+
+#intro p {
 	font-size: 30px;
 	width: 60%;
 	position: relative;
@@ -191,24 +195,24 @@ p {
 	opacity: 1;
 }
 
-#chatbots .maestro-informatico {
+.maestro-informatico {
 	width: 60%;
 	background-color: #e5e7e9;
 }
 
-#chatbots .depuracion {
+.depuracion {
 	width: 40%;
 	background-color: #fae5d3;
 	margin-top: 20px;
 	margin-bottom: 20px;
 }
 
-#chatbots .python {
+.python {
 	width: 40%;
 	background-color: #d4efdf;
 }
 
-#chatbots .amigo-programador {
+.amigo-programador {
 	width: 60%;
 	background-color: #d4e6f1;
 }

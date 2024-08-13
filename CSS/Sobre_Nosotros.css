@@ -34,7 +34,7 @@ span {
     color: whitesmoke;
 }
 
-div button {
+header div button {
     background: none;
     padding: 20px;
     width: 10%;
@@ -42,7 +42,7 @@ div button {
     margin-left: -50%;
 }
 
-div button img {
+header div button img {
     filter: invert(1) hue-rotate(180deg);
 }
 
@@ -65,7 +65,7 @@ div a {
     color: #141413;
 }
 
-div h1 {
+header div h1 {
     font-size: 50px;
 }
 
@@ -95,11 +95,11 @@ img {
     border-radius: 1rem;
 }
 
-.intro {
+#intro {
     margin-bottom: 50px;
 }
 
-.intro h2, .union h2 {
+#intro h2, .union h2 {
     font-size: 50px;
 }
 
@@ -107,7 +107,7 @@ h2 {
     font-size: 40px;
 }
 
-.intro p {
+#intro p {
     display: inline-block;
     font-size: 30px;
     width: 40%;
@@ -141,12 +141,12 @@ h2 {
 }
 
 .maestros img {
-    transition: box-shadow 0.5s ease;
+    transition: filter 0.3s ease;
 }
 
 .maestros img:hover {
     cursor: pointer;
-    box-shadow: 0 0 10px rgba(97, 106, 107, 1);
+    filter: drop-shadow(0 0 5px rgba(97, 106, 107, 1));
 }
 
 .que-ofrecemos {
@@ -185,7 +185,7 @@ h2 {
     background-color: whitesmoke;
     width: 15%;
     margin-bottom: 40px;
-    margin-right: -45%;
+    padding: 20px;
     transition: box-shadow 0.3s ease;
 }
 

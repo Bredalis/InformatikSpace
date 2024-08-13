@@ -106,14 +106,10 @@ img {
     left: 19%;
 }
 
-#botones-acciones {
-    position: relative;
-    top: 220px;
-}
-
 #boton-articulo {
     width: 15%;
     position: relative;
+    top: 220px;
     right: 33%;
     padding: 20px;
     transition: background-color 0.3s ease;
@@ -130,8 +126,47 @@ img {
 #boton-filtro {
     position: relative;
     left: 33%;
+    top: 220px;
     background: none;
+}
 
+#options-container {
+    padding: 20px;
+    border: 1px solid #ddd;
+    width: 20%;
+    position: relative;
+    left: 60%;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+
+.hidden {
+    display: none;
+}
+
+#options-container label {
+    display: block;
+    cursor: pointer;
+    margin-bottom: 10px;
+}
+
+#options-container label input {
+    cursor: pointer;
+}
+
+#apply-button {
+    margin-top: 10px;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #141413;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#apply-button:hover {
+    background-color: #616a6b;
 }
 
 #articulos {
