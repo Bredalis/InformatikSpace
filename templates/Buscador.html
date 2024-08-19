@@ -48,29 +48,15 @@
             <h2>Artículos <span>Recientes</span></h2>
 
             <div>
-                <section class="animacion">
-                    <h3>Nombre</h3>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-                    <cite>Fecha: 1/2/333</cite>
-                </section>
-
-                <section class="animacion">
-                    <h3>Nombre</h3>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-                    <cite>Fecha: 1/2/333</cite>
-                </section>
-
-                <section class="animacion">
-                    <h3>Nombre</h3>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-                    <cite>Fecha: 1/2/333</cite>
-                </section>
-                
-                <section class="animacion">
-                    <h3>Nombre</h3>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-                    <cite>Fecha: 1/2/333</cite>
-                </section>
+                {% for articulo in articulos %}
+                    <section class="animacion">
+                        <a href="{{ url_for('pagina_articulo', titulo_articulo = articulo['tema']) }}" target="_blank">
+                            <h3>{{ articulo.tema }}</h3>
+                            <p>{{ articulo.contenido[0][0].split(":", 1)[1].strip() }}</p>
+                            <cite>{{ articulo.fecha }}</cite>
+                        </a>
+                    </section>
+                {% endfor %}
             </div>   
         </div>
     </main>

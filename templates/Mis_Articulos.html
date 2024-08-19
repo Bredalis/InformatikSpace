@@ -13,7 +13,7 @@
         <div>
             <input type="file" id="file-input" multiple accept="image/*" style="display: none;">
             <button class="boton-cambio-foto">
-                <img src="{{ url_for('static', filename='IMG/Foto_De_Perfil.svg') }}" alt="Foto de perfil" height="70" title="Cambiar Foto" id="image-container">
+                <img src="{{ url_for('static', filename='IMG/Foto_De_Perfil.svg') }}" alt="Foto de perfil" height="70" title="{{ nombre }}" id="image-container">
             </button>         
             <a href="{{ url_for('index') }}"><h1>InformatikSpace</h1></a>
             <nav>
@@ -56,31 +56,24 @@
             <br>
 
             <div>
-                <section class="animacion">
-                    <h3>Nombre</h3>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-                    <cite>Fecha: 1/2/333</cite>
-                </section>
+                {% for articulo in articulos %}
+                    <section class="animacion">
+                        <h3>{{ articulo.tema }}</h3>
+                        <p>{{ articulo.contenido[0][0].split(":", 1)[1].strip() }}</p>
+                        <cite>{{ articulo.fecha }}</cite>
+                    </section>
 
-                <button class="basurero">
-                    <img src="{{ url_for('static', filename='IMG/Basurero.svg') }}" alt="Basurero" height="25" title="Borrar">
-                </button>
-                <button class="observar">
-                    <a href="#"><img src="{{ url_for('static', filename='IMG/Observar.svg') }}" alt="Observar" height="25" title="Ver"></a>
-                </button>
-
-                <section class="animacion">
-                    <h3>Nombre</h3>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-                    <cite>Fecha: 1/2/333</cite>
-                </section>
-
-                <button class="basurero">
-                    <img src="{{ url_for('static', filename='IMG/Basurero.svg') }}" alt="Basurero" height="25" title="Borrar">
-                </button>
-                <button class="observar">
-                    <a href="#"><img src="{{ url_for('static', filename='IMG/Observar.svg') }}" alt="Observar" height="25" title="Ver"></a>
-                </button>
+                    <form action="{{ url_for('borrar_articulo', titulo_articulo = articulo.tema) }}" method="POST" style="display:inline;">
+                        <button type="submit" class="basurero">
+                            <img src="{{ url_for('static', filename='IMG/Basurero.svg') }}" alt="Basurero" height="25" title="Borrar">
+                        </button>
+                    </form>
+                    <button class="observar">
+                        <a href="{{ url_for('pagina_articulo', titulo_articulo = articulo['tema']) }}" target="_blank">
+                            <img src="{{ url_for('static', filename='IMG/Observar.svg') }}" alt="Observar" height="25" title="Ver">
+                        </a>
+                    </button>
+                {% endfor %}
             </div>
         </div>
     </main>

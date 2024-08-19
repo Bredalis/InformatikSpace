@@ -16,33 +16,27 @@
             <img src="{{ url_for('static', filename='IMG/Inicio_Sesion.jpg') }}" alt="Inicio Sesión">
         </div>
 
-        <form action="" method="POST" class="segundo-contenido">
-            <label for="correo">Correo Electrónico:</label>
+        <form action="{{ url_for('login') }}" method="POST" class="segundo-contenido">
+            <label for="nombre-usuario">Nombre de Usuario: </label>
+            <img src="{{ url_for('static', filename='IMG/Usuario.svg') }}" alt="Usuario" height="25">
+            <br><br>
+            <input type="text" id="nombre-usuario" name="nombre-usuario" placeholder="ej: Miguel Ubiera">
+
+            <br><br>
+            <label for="correo">Correo Electrónico: </label>
+            <img src="{{ url_for('static', filename='IMG/Email.svg') }}" alt="Usuario" height="25">
             <br><br>
             <input type="email" id="correo" name="correo" placeholder="ej: ejemplo@gmail.com">
 
             <br><br>
-            <label for="contraseña">Contraseña:</label>
+            <label for="contraseña">Contraseña: </label>
+            <img src="{{ url_for('static', filename='IMG/Contraseña.svg') }}" alt="Usuario" height="25">
             <br><br>
             <input type="password" id="contraseña" name="clave" placeholder="******">
 
             <br><br>
-            <input type="checkbox" id="recordar">
-            <label for="recordar">Recuérdamela</label>
-
-            <a href="" id="contraseña-olvidada">¿Olvidaste tu contraseña?</a>
-
-            <br><br>
             <button type="submit">Iniciar Sesión</button>
         </form>
-
-        <div class="tercer-contenido">
-            <p>Otros métodos:</p>
-
-            <a href="{{ url_for('login', provider='facebook') }}"><img src="{{ url_for('static', filename='IMG/Facebook.png') }}" alt="Facebook" height="40"></a>
-            <a href="{{ url_for('login', provider='google') }}"><img src="{{ url_for('static', filename='IMG/Google.png') }}" alt="Google" height="40"></a>
-            <a href="{{ url_for('login', provider='github') }}"><img src="{{ url_for('static', filename='IMG/GitHub.png') }}" alt="GitHub" height="40"></a>
-        </div>
     </main>
 </body>
 </html>

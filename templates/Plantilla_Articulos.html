@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BTS: El Fenómeno Global</title>
+    <title>{{ temas }}</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='CSS/Plantilla_Articulos.css') }}">
     <link rel="shortcut icon" href="{{ url_for('static', filename='IMG/Logo.png') }}" type="image/x-icon">
 </head>
@@ -14,7 +14,7 @@
             <button class="boton-cambio-foto">
                 <img src="{{ url_for('static', filename='IMG/Foto_De_Perfil.svg') }}" alt="Foto de perfil" height="70" title="Cambiar Foto" id="image-container">
             </button>         
-            <h1>Blog sobre BTS</h1>
+            <h1>Artículos sobre <br> {{ temas }}</h1>
             <nav>
                 <ul>
                     <li><a href="{{ url_for('index') }}">Home</a></li>
@@ -32,20 +32,12 @@
 
     <main class="animacion">
         <section>
-            <h2>BTS: El Fenómeno Global</h2>
+            <h2>{{ temas }}</h2>
             <article>
-                <h3><span>¿Quiénes son BTS?</span></h3>
-                <p>
-                    BTS, también conocidos como Bangtan Sonyeondan o Beyond the Scene, es un grupo surcoreano de chicos que ha tomado el mundo por asalto. Desde su debut en 2013, BTS ha roto barreras culturales y ha logrado un éxito sin precedentes a nivel mundial, convirtiéndose en uno de los grupos más influyentes de la música pop.
-                </p>
-                <h3><span>Impacto en la Industria Musical</span></h3>
-                <p>
-                    El impacto de BTS en la industria musical es innegable. Han sido pioneros en la expansión global del K-pop, alcanzando posiciones altas en las listas de Billboard, y han ganado numerosos premios internacionales, incluidos los American Music Awards y los Billboard Music Awards. Su música aborda temas como la salud mental, el amor propio, y los desafíos de la juventud, resonando profundamente con sus fans, conocidos como ARMY.
-                </p>
-                <h3><span>Logros Destacados</span></h3>
-                <p>
-                    Entre sus logros más destacados se encuentran sus presentaciones en escenarios de renombre como el estadio de Wembley, su participación en eventos globales como la Asamblea General de la ONU, y sus contribuciones a causas benéficas a través de su campaña Love Myself en asociación con UNICEF.
-                </p>
+                {% for articulo in articulos_procesados %}
+                    <h3><span>{{ articulo.subtitulo }}</span></h3>
+                    <p>{{ articulo.contenido }}</p>
+                {% endfor %}
             </article>
         </section>
 

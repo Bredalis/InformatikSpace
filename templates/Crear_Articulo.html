@@ -13,7 +13,7 @@
         <div>
             <input type="file" id="file-input" multiple accept="image/*" style="display: none;">
             <button class="boton-cambio-foto">
-                <img src="{{ url_for('static', filename='IMG/Foto_De_Perfil.svg') }}" alt="Foto de perfil" height="70" title="Cambiar Foto" id="image-container">
+                <img src="{{ url_for('static', filename='IMG/Foto_De_Perfil.svg') }}" alt="Foto de perfil" height="70" title="{{ nombre }}" id="image-container">
             </button>            
             <a href="{{ url_for('index') }}"><h1>InformatikSpace</h1></a>
             <nav>

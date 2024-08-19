@@ -39,12 +39,12 @@ div {
 }
 
 .primer-contenido img {
-	max-width: 30%;
+	max-width: 35%;
 	border-radius: 1rem;
 	float: right;
 	position: relative;
 	right: 20%;
-	bottom: 90px;
+	bottom: 120px;
 	transition: transform 0.5s ease;
 }
 
@@ -76,15 +76,6 @@ form input:focus {
 	outline: none;
 }
 
-#contraseña-olvidada {
-	margin-left: 32px;
-	color: #85c1e9;
-}
-
-a {
-	text-decoration: none;
-}
-
 form button {
     background-color: #141413;
     width: 18%;    
@@ -94,16 +85,14 @@ form button {
     border: none;   
     padding: 15px;
     margin: 10px;
+    position: relative;
+    left: 2%;
     transition: all 0.5s ease;
 }
 
 form button:hover {
     cursor: pointer;
     box-shadow: 0 0 10px rgba(97, 106, 107, 1);
-}
-
-.tercer-contenido img {
-	margin: 5px;
 }
 
 /* Animación  */

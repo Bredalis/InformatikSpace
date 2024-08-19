@@ -8,10 +8,16 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='CSS/style.css') }}">
 </head>
 <body>
-    
     <header>
         <div>
-            <button class="boton-inicio-seccion"><a href="{{ url_for('crear_articulo') }}">Iniciar Sesión</a></button>            
+            {% if nombre %}
+                <input type="file" id="file-input" multiple accept="image/*" style="display: none;">
+                <button class="boton-cambio-foto">
+                    <img src="{{ url_for('static', filename='IMG/Foto_De_Perfil.svg') }}" alt="Foto de perfil" height="70" title="{{ nombre }}" id="image-container">
+                </button>
+            {% else %}
+                <button class="boton-inicio-seccion"><a href="{{ url_for('login') }}">Iniciar Sesión</a></button>
+            {% endif %}      
             <a href="{{ url_for('index') }}"><h1>InformatikSpace</h1></a>
             <nav>
                 <ul>
@@ -68,49 +74,22 @@
             <hr>
             <h2 class="animacion">Nuestros <span>Artículos</span></h2>
 
-            <div class="animacion">
-                <p>Fecha: 1/1/1111</p>
-                <a href="{{ url_for('crear_articulo') }}" target="_blank"><img src="{{ url_for('static', filename='IMG/Amigo_Programador.png') }}" alt="Imagen del articulo" height="200"></a>
-                <h3>Tema</h3>
-                <cite>Lorem ipsum dolor sit amet consectetur adipisicing elit.</cite>
-            </div>
+            {% for i, articulo in enumerate(articulos) %}
+                <div class="animacion">
+                    <p>Fecha: {{ articulo.fecha }}</p>
 
-            <div class="animacion">
-                <p>Fecha: 1/1/1111</p>                    
-                <a href="{{ url_for('crear_articulo') }}" target="_blank"><img src="{{ url_for('static', filename='IMG/Amigo_Programador.png') }}" alt="Imagen del articulo" height="200"></a>
-                <h3>Tema</h3>
-                <cite>Lorem ipsum dolor sit amet consectetur adipisicing elit.</cite>
-            </div>
+                    {% set image_index = (i % 4) + 1 %}
 
-            <div class="animacion">
-                <p>Fecha: 1/1/1111</p>                    
-                <a href="{{ url_for('crear_articulo') }}" target="_blank"><img src="{{ url_for('static', filename='IMG/Amigo_Programador.png') }}" alt="Imagen del articulo" height="200"></a>
-                <h3>Tema</h3>
-                <cite>Lorem ipsum dolor sit amet consectetur adipisicing elit.</cite>
-            </div>
+                    <a href="{{ url_for('pagina_articulo', titulo_articulo=articulo['tema']) }}" target="_blank">
+                        <img src="{{ url_for('static', filename='IMG/Articulo_' ~ image_index ~ '.png') }}" alt="Imagen del articulo" height="200">
+                    </a>
 
-            <div class="animacion">
-                <p>Fecha: 1/1/1111</p>                    
-                <a href="{{ url_for('crear_articulo') }}" target="_blank"><img src="{{ url_for('static', filename='IMG/Amigo_Programador.png') }}" alt="Imagen del articulo" height="200"></a>
-                <h3>Tema</h3>
-                <cite>Lorem ipsum dolor sit amet consectetur adipisicing elit.</cite>
-            </div>
-
-            <div class="animacion">
-                <p>Fecha: 1/1/1111</p>                    
-                <a href="{{ url_for('crear_articulo') }}" target="_blank"><img src="{{ url_for('static', filename='IMG/Amigo_Programador.png') }}" alt="Imagen del articulo" height="200"></a>
-                <h3>Tema</h3>
-                <cite>Lorem ipsum dolor sit amet consectetur adipisicing elit.</cite>
-            </div>
-
-            <div class="animacion">
-                <p>Fecha: 1/1/1111</p>                    
-                <a href="{{ url_for('crear_articulo') }}" target="_blank"><img src="{{ url_for('static', filename='IMG/Amigo_Programador.png') }}" alt="Imagen del articulo" height="200"></a>
-                <h3>Tema</h3>
-                <cite>Lorem ipsum dolor sit amet consectetur adipisicing elit.</cite>
-            </div>
+                    <h3>{{ articulo.tema }}</h3>
+                    <cite>{{ articulo.contenido[0][0].split(":", 1)[1].strip() }}</cite>
+                </div>
+            {% endfor %}
         </div>
-        <a href="" class="animacion"><img src="{{ url_for('static', filename='IMG/Hacia_Abajo.svg') }}" alt="Ir hacia abajo" height="50" title="Mostrar mas"></a>           
+        <a href="@" class="animacion"><img src="{{ url_for('static', filename='IMG/Hacia_Abajo.svg') }}" alt="Ir hacia arriba" height="50" title="Final"></a>           
     </main>
     
     <footer>
