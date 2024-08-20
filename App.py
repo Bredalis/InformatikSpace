@@ -160,6 +160,8 @@ def informatikspace():
     def error_404(e):
         return render_template("404.html"), 404
 
+    return app
+
 if __name__ == "__main__":
     app = informatikspace()
     app.run()
