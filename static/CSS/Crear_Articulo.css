@@ -29,6 +29,28 @@ body {
     filter: drop-shadow(0 0 2px rgba(97, 106, 107, 1));
 }
 
+.boton-inicio-seccion {
+    background-color: #141413;
+    width: 45%;
+    padding: 20px;
+    position: relative;
+    top: 40px;
+    left: 960px;
+    border: none;
+    border-radius: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+.boton-inicio-seccion:hover {
+    background-color: #616a6b;
+    cursor: pointer;
+}
+
+.boton-inicio-seccion a {
+    color: whitesmoke;
+    font-size: 20px;
+}
+
 span {
     color: #a6acaf;
 }
@@ -39,6 +61,10 @@ header {
 
 div a {
     color: #141413;
+}
+
+#crear-articulo {
+    color: #616a6b;
 }
 
 header div {
@@ -182,4 +208,93 @@ footer p {
     top: 50px;
     animation: slide-up 1s ease-out forwards;
     animation-delay: 0.5s;
+}
+
+/* Diseño Responsivo */
+@media (max-width: 1200px) {
+    .boton-cambio-foto {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .boton-inicio-seccion {
+        left: 50%;
+        transform: translateX(-50%);
+        width: 80%;
+    }
+
+    header div {
+        width: 80%;
+        position: relative;
+    }
+
+    #barra-prompt p {
+        font-size: 30px;
+        left: 0;
+        margin-top: 10%;
+    }
+
+    #barra-prompt iframe {
+        width: 100%;
+        left: 0;
+    }
+
+    #barra-prompt textarea {
+        width: 80%;
+        left: 10%;
+    }
+
+    #barra-prompt button {
+        margin-left: 10%;
+    }
+
+    footer img {
+        right: 20%;
+        bottom: 30px;
+    }
+}
+
+@media (max-width: 768px) {
+    .boton-cambio-foto {
+        left: 50%;
+        transform: translateX(-50%);
+        padding: 10px;
+    }
+
+    .boton-inicio-seccion {
+        left: 50%;
+        transform: translateX(-50%);
+        width: 100%;
+    }
+
+    header div {
+        width: 100%;
+        position: relative;
+    }
+
+    #barra-prompt p {
+        font-size: 20px;
+        left: 0;
+        margin-top: 5%;
+    }
+
+    #barra-prompt iframe {
+        width: 100%;
+        height: 300px;
+        left: 0;
+    }
+
+    #barra-prompt textarea {
+        width: 90%;
+        left: 5%;
+    }
+
+    #barra-prompt button {
+        margin-left: 5%;
+    }
+
+    footer img {
+        right: 10%;
+        bottom: 20px;
+    }
 }

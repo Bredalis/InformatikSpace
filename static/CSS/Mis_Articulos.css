@@ -29,6 +29,28 @@ body {
     filter: drop-shadow(0 0 2px rgba(97, 106, 107, 1));
 }
 
+.boton-inicio-seccion {
+    background-color: #141413;
+    width: 45%;
+    padding: 20px;
+    position: relative;
+    top: 40px;
+    left: 960px;
+    border: none;
+    border-radius: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+.boton-inicio-seccion:hover {
+    background-color: #616a6b;
+    cursor: pointer;
+}
+
+.boton-inicio-seccion a {
+    color: whitesmoke;
+    font-size: 20px;
+}
+
 span {
     color: #a6acaf;
 }
@@ -39,6 +61,10 @@ header {
 
 div a {
     color: #141413;
+}
+
+#articulos {
+    color: #616a6b;
 }
 
 header div {
@@ -171,4 +197,60 @@ footer p {
     top: 50px;
     animation: slide-up 1s ease-out forwards;
     animation-delay: 0.5s;
+}
+
+/* Diseño Responsivo */
+@media (max-width: 768px) {
+    header div {
+        width: 100%;
+        height: auto;
+        margin: 0;
+    }
+
+    .contenido-articulos div section {
+        width: 90%;
+        left: 5%;
+    }
+
+    .contenido-articulos h2 {
+        font-size: 40px;
+    }
+}
+
+@media (max-width: 480px) {
+    header div {
+        width: 100%;
+        position: static;
+    }
+
+    .contenido-articulos div section {
+        width: 100%;
+        left: 0;
+        margin: 20px 0;
+    }
+
+    .contenido-articulos h2 {
+        font-size: 30px;
+    }
+
+    footer {
+        padding: 50px;
+    }
+
+    footer img {
+        max-width: 80px;
+        right: 10%;
+    }
+
+    footer ul {
+        margin-left: 20px;
+    }
+
+    footer ul li {
+        bottom: 50px;
+    }
+
+    footer p {
+        margin-bottom: 0;
+    }
 }

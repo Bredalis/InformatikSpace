@@ -17,6 +17,22 @@ span {
     color: #a6acaf;
 }
 
+.boton-cambio-foto {
+    border: none;  
+    padding: 20px;
+    position: relative;
+    top: 45px;
+    left: 900px;
+    background: none;
+    width: 10%;
+    transition: filter 0.3s ease; 
+}
+
+.boton-cambio-foto img:hover {
+    cursor: pointer;
+    filter: drop-shadow(0 0 2px rgba(97, 106, 107, 1));
+}
+
 .boton-inicio-seccion {
     background-color: #141413;
     width: 15%;
@@ -42,7 +58,7 @@ header div button {
     margin-left: -50%;
 }
 
-header div button img {
+header #boton-subir img {
     filter: invert(1) hue-rotate(180deg);
 }
 
@@ -63,6 +79,10 @@ button a {
 
 div a {
     color: #141413;
+}
+
+#home {
+    color: #616a6b;
 }
 
 div h1 {
@@ -109,7 +129,6 @@ img {
 #boton-articulo {
     width: 15%;
     position: relative;
-    top: 220px;
     right: 33%;
     padding: 20px;
     transition: background-color 0.3s ease;
@@ -121,52 +140,6 @@ img {
 
 #boton-articulo a {
     color: whitesmoke;
-}
-
-#boton-filtro {
-    position: relative;
-    left: 33%;
-    top: 220px;
-    background: none;
-}
-
-#options-container {
-    padding: 20px;
-    border: 1px solid #ddd;
-    width: 20%;
-    position: relative;
-    left: 60%;
-    border-radius: 5px;
-    background-color: #f9f9f9;
-}
-
-.hidden {
-    display: none;
-}
-
-#options-container label {
-    display: block;
-    cursor: pointer;
-    margin-bottom: 10px;
-}
-
-#options-container label input {
-    cursor: pointer;
-}
-
-#apply-button {
-    margin-top: 10px;
-    padding: 5px 10px;
-    border: none;
-    border-radius: 5px;
-    background-color: #141413;
-    color: #fff;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-#apply-button:hover {
-    background-color: #616a6b;
 }
 
 #articulos {
@@ -265,4 +238,66 @@ footer p {
     top: 50px;
     animation: slide-up 1s ease-out forwards;
     animation-delay: 0.5s;
+}
+
+/* Diseño Responsivo */
+@media screen and (max-width: 768px) {
+    body {
+        font-size: 14px;
+    }
+
+    div h1 {
+        font-size: 32px;
+    }
+
+    #intro p {
+        font-size: 20px;
+        width: 80%;
+        left: 10%;
+    }
+
+    #boton-articulo {
+        width: 80%;
+        right: 10%;
+    }
+
+    #articulos {
+        margin: 20px;
+    }
+
+    #articulos h2 {
+        font-size: 32px;
+        margin: 20px;
+    }
+
+    #articulos div {
+        width: 100%;
+        margin: 10px 0;
+    }
+
+    .boton-inicio-seccion,
+    .boton-cambio-foto {
+        width: 80%;
+        left: 10%;
+    }
+
+    footer {
+        padding: 50px;
+    }
+
+    footer img {
+        right: 25%;
+    }
+
+    footer ul {
+        margin-left: 0;
+    }
+
+    footer ul li {
+        bottom: 50px;
+    }
+
+    nav ul li {
+        font-size: 16px;
+    }
 }

@@ -17,6 +17,22 @@ span {
     color: #a6acaf;
 }
 
+.boton-cambio-foto {
+    border: none;  
+    padding: 20px;
+    position: relative;
+    top: 45px;
+    left: 900px;
+    background: none;
+    width: 10%;
+    transition: filter 0.3s ease; 
+}
+
+.boton-cambio-foto img:hover {
+    cursor: pointer;
+    filter: drop-shadow(0 0 2px rgba(97, 106, 107, 1));
+}
+
 .boton-inicio-seccion {
     background-color: #141413;
     width: 15%;
@@ -42,7 +58,7 @@ header div button {
     margin-left: -50%;
 }
 
-header div button img {
+header #boton-subir img {
     filter: invert(1) hue-rotate(180deg);
 }
 
@@ -63,6 +79,10 @@ button a {
 
 div a {
     color: #141413;
+}
+
+#sobre-nosostros {
+    color: #616a6b;
 }
 
 header div h1 {
@@ -124,11 +144,11 @@ h2 {
     width: 60%;
 }
 
-.maestros {
+.frases {
     margin: 85px;
 }
 
-.maestros section {
+.frases section {
     width: 50%;
     position: relative;
     left: 25%;
@@ -136,15 +156,15 @@ h2 {
     opacity: 1;
 }
 
-.maestros section.fade-out {
+.frases section.fade-out {
     opacity: 0;
 }
 
-.maestros img {
+.frases img {
     transition: filter 0.3s ease;
 }
 
-.maestros img:hover {
+.frases img:hover {
     cursor: pointer;
     filter: drop-shadow(0 0 5px rgba(97, 106, 107, 1));
 }
@@ -254,4 +274,28 @@ footer p {
     top: 50px;
     animation: slide-up 1s ease-out forwards;
     animation-delay: 0.5s;
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+    .boton-cambio-foto,
+    .boton-inicio-seccion {
+        left: 10px;
+        width: 80%;
+    }
+
+    #intro p,
+    .quienes-somos p,
+    .que-ofrecemos section p {
+        width: 100%;
+    }
+
+    .frases section {
+        width: 90%;
+    }
+
+    .que-ofrecemos section {
+        width: 90%;
+        margin: 20px;
+    }
 }

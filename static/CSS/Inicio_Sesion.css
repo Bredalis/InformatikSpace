@@ -102,3 +102,65 @@ form button:hover {
 		top: 0;
 	}
 }
+
+/* Diseño Responsivo */
+@media (max-width: 768px) {
+    main {
+        margin: 5%;
+        padding: 15px;
+    }
+
+    .primer-contenido {
+        text-align: center;
+    }
+
+    .primer-contenido img {
+        max-width: 50%;
+        position: static;
+        margin: 0 auto;
+        bottom: auto;
+        right: auto;
+    }
+
+    form {
+        left: 0;
+        padding: 20px;
+    }
+
+    form input {
+        width: 100%;
+        font-size: 16px;
+    }
+
+    form button {
+        width: 100%;
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 480px) {
+    .primer-contenido h1 {
+        font-size: 30px;
+    }
+
+    .primer-contenido p {
+        font-size: 16px;
+    }
+
+    .primer-contenido img {
+        max-width: 70%;
+    }
+
+    form {
+        padding: 15px;
+    }
+
+    form input {
+        font-size: 14px;
+    }
+
+    form button {
+        font-size: 16px;
+        padding: 10px;
+    }
+}

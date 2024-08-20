@@ -1,5 +1,4 @@
 
-
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
 
 * {
@@ -19,7 +18,7 @@ body {
     padding: 20px;
     position: relative;
     top: 45px;
-    left: 500px;
+    left: 850px;
     background: none;
     transition: filter 0.3s ease; 
 }
@@ -27,6 +26,55 @@ body {
 .boton-cambio-foto img:hover {
     cursor: pointer;
     filter: drop-shadow(0 0 2px rgba(97, 106, 107, 1));
+}
+
+.boton-inicio-seccion {
+    background-color: #141413;
+    width: 15%;
+    padding: 20px;
+    position: relative;
+    top: 40px;
+    left: 820px;
+    border: none;
+    border-radius: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+.boton-inicio-seccion:hover {
+    background-color: #616a6b;
+    cursor: pointer;
+}
+
+.boton-inicio-seccion a {
+    color: whitesmoke;
+    font-size: 20px;
+}
+
+header div button {
+    background: none;
+    padding: 20px;
+    width: 10%;
+    position: fixed;
+    margin-left: -50%;
+}
+
+header #boton-subir img {
+    filter: invert(1) hue-rotate(180deg);
+}
+
+button {
+    background-color: #141413;
+    border-radius: 1rem;
+    border: none;    
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+button a {
+    color: whitesmoke;
+    font-size: 20px;
 }
 
 span {
@@ -92,6 +140,15 @@ main h2 {
     font-size: 30px;
     text-align: center;
     margin-bottom: 40px;
+}
+
+main img {
+    border-radius: 50%;
+    transition: all 0.3s ease;
+}
+
+main img:hover {
+    filter: drop-shadow(0 0 2px rgba(97, 106, 107, 1));
 }
 
 main p {
@@ -210,4 +267,20 @@ footer p {
     top: 50px;
     animation: slide-up 1s ease-out forwards;
     animation-delay: 0.5s;
+}
+
+@media (max-width: 768px) {
+    .boton-cambio-foto, .boton-inicio-seccion {
+        left: 10px;
+        width: auto;
+    }
+    header div {
+        width: 100%;
+        height: auto;
+        margin: 0;
+    }
+    main {
+        left: 5%;
+        width: 90%;
+    }
 }

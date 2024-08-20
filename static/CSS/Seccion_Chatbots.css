@@ -17,6 +17,22 @@ span {
 	color: #a6acaf;
 }
 
+.boton-cambio-foto {
+    border: none;  
+    padding: 20px;
+    position: relative;
+    top: 45px;
+    left: 900px;
+    background: none;
+    width: 10%;
+    transition: filter 0.3s ease; 
+}
+
+.boton-cambio-foto img:hover {
+    cursor: pointer;
+    filter: drop-shadow(0 0 2px rgba(97, 106, 107, 1));
+}
+
 .boton-inicio-seccion {
     background-color: #141413;
     width: 15%;
@@ -42,7 +58,7 @@ header div button {
     margin-left: -50%;
 }
 
-header div button img {
+header #boton-subir img {
     filter: invert(1) hue-rotate(180deg);
 }
 
@@ -63,6 +79,10 @@ button a {
 
 div a {
 	color: #141413;
+}
+
+#seccion-chatbot {
+	color: #616a6b;
 }
 
 header div h1 {
@@ -274,4 +294,62 @@ footer p {
 	top: 50px;
 	animation: slide-up 1s ease-out forwards;
 	animation-delay: 0.5s;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    .boton-cambio-foto {
+        left: 20px;
+        top: 30px;
+    }
+
+    .boton-inicio-seccion {
+        width: 90%;
+        left: 5%;
+    }
+
+    main {
+        margin-top: 5%;
+        padding: 15px;
+    }
+
+    main h2 {
+        font-size: 24px;
+    }
+
+    article h3 {
+        font-size: 20px;
+    }
+
+    footer {
+        padding: 30px;
+    }
+}
+
+@media (max-width: 480px) {
+    .boton-cambio-foto {
+        top: 20px;
+    }
+
+    .boton-inicio-seccion {
+        width: 100%;
+        left: 0;
+    }
+
+    main {
+        margin-top: 3%;
+        padding: 10px;
+    }
+
+    main h2 {
+        font-size: 20px;
+    }
+
+    article h3 {
+        font-size: 18px;
+    }
+
+    footer {
+        padding: 20px;
+    }
 }

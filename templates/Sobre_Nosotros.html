@@ -1,3 +1,5 @@
+{% from "Macros.jinja2" import header, footer %}
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,29 +10,13 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='CSS/Sobre_Nosotros.css') }}">
 </head>
 <body>
-    
-    <header>
-        <div>
-            <button class="boton-inicio-seccion"><a href="{{ url_for('login') }}">Iniciar Sesión</a></button> 
-            <a href="{{ url_for('index') }}"><h1>InformatikSpace</h1></a>
-            <nav>
-                <ul>
-                    <li><a href="{{ url_for('index') }}">Home</a></li> 
-                    <li><a href="{{ url_for('crear_articulo') }}">Crear Artículo</a></li>
-                    <li><a href="{{ url_for('buscador') }}">Buscador</a></li> 
-                    <li><a href="{{ url_for('seccion_chatbots') }}">Sección de Chatbots</a></li> 
-                    <li><a href="{{ url_for('sobre_nosotros') }}" style="color: #616a6b;">Sobre Nosotros</a></li> 
-                </ul>
-            </nav>
-            <button><a href="#"><img src="{{ url_for('static', filename='IMG/Hacia_Arriba.svg') }}" alt="Ir hacia arriba"></a></button>
-        </div>
-    </header>
+    {{ header(nombre=nombre) }}
 
     <main>
         <div id="intro">
             <h2>InformatikSpace</h2>
             <p>
-                Nuestra misión es establecer un espacio exclusivo para informáticos, donde tendrán la libertad de compartir todo lo que deseen sobre sí mismos o sobre el técnico.
+                Nuestra misión es establecer un espacio exclusivo para informáticos, donde tendrán la libertad de compartir todo lo que deseen sobre sí mismos o sobre el sector.
             </p>
             <img src="{{ url_for('static', filename='IMG/Chica_Codeando.jpg') }}" alt="Imagen de InformatikSpace" class="animacion">
         </div>
@@ -38,22 +24,24 @@
         <div class="quienes-somos">
             <h2>¿Quiénes <span>Somos</span>?</h2>
             <p>
-                InformatikSpace es una plataforma dedicada exclusivamente a estudiantes de informática de 4to, 5to y 6to grado de secundaria del Politécnico Sergio Augusto Beras. Nuestro objetivo es proporcionar un espacio donde los informáticos puedan compartir sus conocimientos, experiencias y proyectos con una comunidad que comparta sus mismos intereses y pasiones. <br><br> El Politécnico Sergio Augusto Beras es un liceo situado en la Av. Manuela Díez Jiménez de El Seibo, donde se enseñan tres tipos de técnicos: Informática, Enfermería y Contabilidad.
+                InformatikSpace es una plataforma dedicada a todas las personas, pero especialmente para aquellos 
+                amantes de la informática y el mundo de las computadoras. <br><br> Nuestro objetivo es proporcionar un 
+                espacio donde los programadores o principiantes en esta área profesional puedan compartir sus conocimientos, 
+                experiencias y proyectos con una comunidad que comparta sus mismos intereses y pasiones.
             </p>       
         </div>
 
-        <div class="maestros">
-            <h2>Maestros Del <span>Sergio Augusto Beras</span></h2>
+        <div class="frases">
+            <h2>Palabras Que Describen Nuestro <span>Propósito</span></h2>
             <br><br>
 
             <section id="seccion">
-                <img src="{{ url_for('static', filename='IMG/Perfil.jpg') }}" alt="Rolando Lopéz" id="img">                
-                <p id="parrafo">
-                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. In necessitatibus blanditiis cupiditate dicta maiores, eligendi ipsam error suscipit? Quam doloremque, totam unde ipsam libero ab magni illo ratione praesentium maiores.
+                <img src="{{ url_for('static', filename='IMG/Logros.jpg') }}" alt="Imagen de frases" id="img">                
+                <p id="frase">
+                    Transforma tu pasión en logros: en InformatikSpace, cada reto es una oportunidad para alcanzar nuevas alturas en el mundo de la informática.
                 </p>
-                <cite id="nombre">Rolando Lopéz</cite> 
                 <br>
-                <cite id="modulo"><span>Módulo</span>: Análisis y Desarrollo de Sistema</cite>
+                <cite id="tema"><span>Tema</span>: Pasión y Logros</cite>
             </section>
 
             <br><br>
@@ -80,18 +68,8 @@
                 <img src="{{ url_for('static', filename='IMG/Perfil.jpg') }}" alt="Perfil">
 
                 <p>
-                    Página personal de cada usuario donde pueden ver y gestionar sus artículos. Incluye opciones para crear, editar y revisar sus publicaciones.
+                    Página para que cada usuario pueda ver y gestionar los artículos. Incluye opciones para crear, editar y revisar las publicaciones.
                 </p>
-            </section>
-
-            <br>
-            <section class="animacion">
-                <h3>Búsqueda Avanzada</h3>
-                <img src="{{ url_for('static', filename='IMG/Busqueda.jpg') }}" alt="Búsqueda Avanzada">
-
-                <p>
-                    Permite a los usuarios realizar búsquedas detalladas dentro del sitio. Incluye filtros y opciones para buscar artículos, publicaciones o perfiles específicos basados en palabras clave, categorías o etiquetas.
-                </p>    
             </section>
 
             <br>
@@ -106,38 +84,13 @@
 
         <div class="union">
             <h2>Únete a los usuarios <br> que son parte de InformatikSpace</h2>
-            <button class="animacion"><a href="{{ url_for('login') }}">Iniciar Sesión</a></button> <!-- Actualizado para usar rutas de Flask -->
+            <button class="animacion"><a href="{{ url_for('login') }}">Iniciar Sesión</a></button>
         </div>
     </main>
 
-    <footer>
-        <a href="{{ url_for('index') }}"><img src="{{ url_for('static', filename='IMG/Logo.png') }}" alt="InformatikSpace Logo"></a> <!-- Actualizado para usar rutas de Flask -->
-        <div>
-            <ul>
-                <li><a href="{{ url_for('index') }}">Home</a></li> 
-                <li><a href="{{ url_for('crear_articulo') }}">Crear Artículo</a></li>
-                <li><a href="{{ url_for('mis_articulos') }}">Mis Artículos</a></li>
-                <li><a href="{{ url_for('buscador') }}">Buscador</a></li>
-                <li><a href="{{ url_for('seccion_chatbots') }}">Sección de Chatbots</a></li>
-                <li><a href="{{ url_for('sobre_nosotros') }}">Sobre Nosotros</a></li>
-            </ul>
-
-            <ul>
-                <li><a href="https://github.com/Bredalis" target="_blank">GitHub</a></li>
-                <li><a href="https://www.linkedin.com/in/bredalis-gautreaux/" target="_blank">LinkedIn</a></li>
-                <li><a href="https://es.stackoverflow.com/users/293358/bredalis-gautreaux" target="_blank">Stack OverFlow</a></li>
-                <li><a href="https://huggingface.co/chat/assistants?user=Bredalis" target="_blank">Hugging Face</a></li>
-                <li><a href="https://x.com/Bredalis_P" target="_blank">X</a></li>
-            </ul>
-
-            <ul>
-                <li><a href="https://www.gnu.org/licenses/gpl-3.0.en.html" target="_blank">Licencia Pública General GNU v3.0</a></li>
-            </ul>
-
-            <p>© 2024 InformatikSpace <br> Todos los derechos reservados</p>
-        </div>
-    </footer>
-
-    <script src="{{ url_for('static', filename='JS/Sobre_Nosotros.js') }}"></script>
+    {{ footer() }}
+    
+    <script src="{{ url_for('static', filename='JS/Cambiar_Foto.js') }}"></script>
+    <script src="{{ url_for('static', filename='JS/Seccion_Frases.js') }}"></script>
 </body>
 </html>

@@ -13,23 +13,6 @@ body {
 	font-family: Roboto, sans-serif;
 }
 
-.boton-inicio-seccion {
-	background-color: #141413;
-	width: 15%;
-	position: relative;
-	top: 35px;
-	left: 850px;
-    transition: background-color 0.3s ease;
-}
-
-.boton-inicio-seccion:hover {
-	background-color: #616a6b;
-}
-
-.boton-inicio-seccion a {
-	color: whitesmoke;
-}
-
 header div button {
 	background: none;
 	padding: 20px;
@@ -64,6 +47,7 @@ header div a {
 
 header div h1 {
 	font-size: 50px;
+	margin-top: 10%;
 }
 
 nav ul li {
@@ -157,4 +141,87 @@ footer p {
 		opacity: 1;
 		top: 0;
 	}
+}
+
+/* Diseño Responsivo */
+@media (max-width: 768px) {
+	header div {
+		width: 100%;
+    height: auto;
+    margin-left: 0;
+    position: static;
+  }
+
+  header div h1 {
+    font-size: 30px;
+  }
+
+  main h1 {
+    font-size: 10rem;
+  }
+
+  main p {
+     font-size: 20px;
+  }
+
+  main button {
+    width: 50%;
+    padding: 10px;
+    font-size: 18px;
+  }
+
+  footer {
+    padding: 50px;
+  }
+
+  footer img {
+    right: 20%;
+    bottom: 20px;
+  }
+
+  footer ul {
+    margin-left: 20px;
+  }
+
+  footer ul li {
+    margin-bottom: 5px;
+    position: static;
+  }
+}
+
+@media (max-width: 480px) {
+  header div h1 {
+    font-size: 24px;
+  }
+
+  main h1 {
+    font-size: 7rem;
+  }
+
+  main p {
+    font-size: 16px;
+  }
+
+  main button {
+    width: 80%;
+    padding: 15px;
+    font-size: 16px;
+  }
+
+  footer {
+    padding: 30px;
+  }
+
+  footer img {
+    max-width: 80px;
+    right: 10%;
+  }
+
+  footer ul {
+    margin-left: 10px;
+  }
+
+  footer ul li {
+    margin-bottom: 2px;
+  }
 }
