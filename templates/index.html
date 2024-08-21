@@ -1,0 +1,53 @@
+{% from "Macros.jinja2" import header, footer %}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio \ InformatikSpace</title>
+    <link rel="shortcut icon" href="{{ url_for('static', filename='IMG/Logo.png') }}" type="image/x-icon">
+    <link rel="stylesheet" href="{{ url_for('static', filename='CSS/style.css') }}">
+</head>
+<body>
+    {{ header(nombre=nombre) }}
+
+    <main>
+        <div id="intro" class="animacion">
+            <h1>Bienvenido a InformatikSpace</h1>
+            <p>
+                Nuestra misión es establecer un espacio exclusivo para informáticos, donde tendrán la libertad 
+                de compartir todos los artículos que deseen sobre temas de informática, tecnología y más.
+            </p>
+            <a href="#articulos"><img src="{{ url_for('static', filename='IMG/Hacia_Abajo.svg') }}" alt="Ir hacia abajo" height="50"></a>
+        </div>
+
+        <div id="articulos">
+            <hr>
+            <br>
+            <button id="boton-articulo"><a href="{{ url_for('crear_articulo') }}">Crear Artículo</a></button>
+            <h2 class="animacion">Nuestros <span>Artículos</span></h2>
+
+            {% for i, articulo in enumerate(articulos) %}
+                <div class="animacion">
+                    <p>Fecha: {{ articulo.fecha }}</p>
+
+                    {% set image_index = (i % 4) + 1 %}
+
+                    <a href="{{ url_for('pagina_articulo', titulo_articulo=articulo['tema']) }}" target="_blank">
+                        <img src="{{ url_for('static', filename='IMG/Articulo_' ~ image_index ~ '.png') }}" alt="Imagen del articulo" height="200">
+                    </a>
+
+                    <h3>{{ articulo.tema }}</h3>
+                    <cite>{{ articulo.contenido[0][0].split(":", 1)[1].strip() }}</cite>
+                </div>
+            {% endfor %}
+        </div>
+        <img src="{{ url_for('static', filename='IMG/Hacia_Abajo.svg') }}" class="animacion" alt="Ir hacia arriba" height="50" title="Final">          
+    </main>
+    
+    {{ footer() }}
+
+    <script src="{{ url_for('static', filename='JS/Cambiar_Foto.js') }}"></script>
+</body>
+</html>

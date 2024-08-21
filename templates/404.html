@@ -1,0 +1,26 @@
+{% from "Macros.jinja2" import header_404, footer %}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página No Encontrada \ InformatikSpace</title>
+    <link rel="shortcut icon" href="{{ url_for('static', filename='IMG/Logo.png') }}" type="image/x-icon">
+    <link rel="stylesheet" href="{{ url_for('static', filename='CSS/404.css') }}">
+</head>
+<body>
+    {{ header_404() }}
+
+    <main>
+        <h1>404</h1>
+        <p>
+            Oops, parece que te has perdido. <br>
+            Vamos a llevarte de vuelta a inicio.
+        </p>
+        <button><a href="{{ url_for('index') }}">Ve a Inicio</a></button>
+    </main>
+    
+    {{ footer() }}
+</body>
+</html>

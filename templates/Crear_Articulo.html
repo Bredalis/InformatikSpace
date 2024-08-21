@@ -1,0 +1,36 @@
+{% from "Macros.jinja2" import header_articulos, footer %}
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crear Artículo \ InformatikSpace</title>
+    <link rel="shortcut icon" href="{{ url_for('static', filename='IMG/Logo.png') }}" type="image/x-icon">
+    <link rel="stylesheet" href="{{ url_for('static', filename='CSS/Crear_Articulo.css') }}">
+</head>
+<body>
+    
+    {{ header_articulos(nombre=nombre) }}
+
+    <main>
+        <div id="barra-prompt">
+            <p>Genera todos los artículos que quieras <br> con tan solo unos cuantos prompts</p>
+
+            <form action="{{ url_for('crear_articulo') }}" method="POST">
+
+                <iframe src="https://hf.co/chat/assistant/66c25a0552740b26891956c8" frameborder="0" width="500" height="400"></iframe>
+                <br>
+                <textarea type="text" placeholder="Ingresa el contenido generado" name="contenido"></textarea>
+                <button type="submit">
+                    <img src="{{ url_for('static', filename='IMG/Enviar_Datos.svg') }}" alt="Enviar datos" height="50" title="Enviar">
+                </button>
+            </form>
+        </div>
+    </main>
+    
+    {{ footer() }}
+
+    <script src="{{ url_for('static', filename='JS/Cambiar_Foto.js') }}"></script>
+</body>
+</html>

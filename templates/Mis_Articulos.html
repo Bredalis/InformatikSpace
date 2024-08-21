@@ -1,0 +1,47 @@
+{% from "Macros.jinja2" import header_articulos, footer %}
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mis Artículos \ InformatikSpace</title>
+    <link rel="shortcut icon" href="{{ url_for('static', filename='IMG/Logo.png') }}" type="image/x-icon">
+    <link rel="stylesheet" href="{{ url_for('static', filename='CSS/Mis_Articulos.css') }}">
+</head>
+<body>
+    {{ header_articulos(nombre=nombre) }}
+
+    <main>
+        <div class="contenido-articulos">
+            <h2>Mis <span>Artículos</span></h2>
+            <br>
+
+            <div>
+                {% for articulo in articulos %}
+                    <section class="animacion">
+                        <h3>{{ articulo.tema }}</h3>
+                        <p>{{ articulo.contenido[0][0].split(":", 1)[1].strip() }}</p>
+                        <cite>{{ articulo.fecha }}</cite>
+                    </section>
+
+                    <form action="{{ url_for('borrar_articulo', titulo_articulo = articulo.tema) }}" method="POST" style="display:inline;">
+                        <button type="submit" class="basurero">
+                            <img src="{{ url_for('static', filename='IMG/Basurero.svg') }}" alt="Basurero" height="25" title="Borrar">
+                        </button>
+                    </form>
+                    <button class="observar">
+                        <a href="{{ url_for('pagina_articulo', titulo_articulo = articulo['tema']) }}" target="_blank">
+                            <img src="{{ url_for('static', filename='IMG/Observar.svg') }}" alt="Observar" height="25" title="Ver">
+                        </a>
+                    </button>
+                {% endfor %}
+            </div>
+        </div>
+    </main>
+    
+    {{ footer() }}
+
+    <script src="{{ url_for('static', filename='JS/Cambiar_Foto.js') }}"></script>
+</body>
+</html>

@@ -1,0 +1,300 @@
+
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+
+* {
+    text-align: center;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Roboto, sans-serif;
+}
+
+.boton-cambio-foto {
+    border: none;  
+    padding: 20px;
+    position: relative;
+    top: 45px;
+    left: 980px;
+    background: none;
+    width: 10%;
+    transition: filter 0.3s ease; 
+}
+
+.boton-cambio-foto img:hover {
+    cursor: pointer;
+    filter: drop-shadow(0 0 2px rgba(97, 106, 107, 1));
+}
+
+.boton-inicio-seccion {
+    background-color: #141413;
+    width: 45%;
+    padding: 20px;
+    position: relative;
+    top: 40px;
+    left: 960px;
+    border: none;
+    border-radius: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+.boton-inicio-seccion:hover {
+    background-color: #616a6b;
+    cursor: pointer;
+}
+
+.boton-inicio-seccion a {
+    color: whitesmoke;
+    font-size: 20px;
+}
+
+span {
+    color: #a6acaf;
+}
+
+header {
+    min-height: calc(100vh - 200px);
+}
+
+div a {
+    color: #141413;
+}
+
+#crear-articulo {
+    color: #616a6b;
+}
+
+header div {
+    position: fixed;
+    background-color: whitesmoke;
+    width: 30%;
+    height: 110%;
+    margin-top: -25px;
+    margin-left: -8px;
+}
+
+header div h1 {
+    font-size: 40px;
+}
+
+header div #acciones {
+    position: relative;
+    right: 60px;
+}
+
+header div nav ul li {
+    text-align: justify;
+    list-style: none;
+    margin: 20px;
+    font-size: 20px;
+}
+
+nav ul li a:hover {
+    color: #616a6b;
+}
+
+a {
+    text-decoration: none;
+}
+
+#barra-prompt p {
+    font-size: 40px;
+    position: relative;
+    left: 12%;
+    margin-top: -52%;
+    margin-bottom: 42px;
+}
+
+#barra-prompt {
+    margin-top: 26%;
+}
+
+#barra-prompt iframe {
+    position: relative;
+    left: 10%;
+}
+
+#barra-prompt textarea {
+    width: 30%;
+    height: 30%;
+    position: relative;
+    left: 22%;
+    margin-top: 35px;
+    font-size: 20px;
+    border: 2px solid #D7DBDD;
+    border-radius: 20px;
+    box-sizing: border-box;
+}
+
+#barra-prompt textarea:focus {
+    box-shadow: 0 0 3px rgba(97, 106, 107, 1);
+    outline: none;
+}
+
+#barra-prompt button {
+    background: none;
+    padding: 20px;
+    margin-left: 22%;
+    margin-top: -25px;
+    border: none;   
+    transition: filter 0.3s ease; 
+}
+
+#barra-prompt button img:hover {
+    cursor: pointer;
+    filter: drop-shadow(0 0 2px rgba(97, 106, 107, 1));
+}
+
+footer {
+    background-color: #141413;
+    margin-bottom: -8px;
+    margin-left: -8px;
+    margin-right: -8px;
+    color: #a6acaf;
+    padding: 100px;
+    font-size: 18px;
+    position: relative;
+    margin-top: 120px; 
+    z-index: 0;
+}
+
+footer img {
+    max-width: 100px;
+    margin: 25px;
+    position: relative;
+    right: 40%;
+    bottom: 60px;
+}
+
+footer a {
+    color: #a6acaf;
+}
+
+footer a:hover {
+    color: whitesmoke;
+}
+
+footer ul {
+    display: inline-block;
+    margin-left: 60px;
+}
+
+footer ul li {
+    margin-bottom: 10px;
+    position: relative;
+    bottom: 100px;
+    text-align: justify;
+}
+
+footer p {
+    text-align: right;
+    margin-bottom: -10px;
+}
+
+/* Animación */
+@keyframes slide-up {
+    to {
+        opacity: 1;
+        top: 0;
+    }
+}
+
+.animacion {
+    opacity: 0;
+    position: relative;
+    top: 50px;
+    animation: slide-up 1s ease-out forwards;
+    animation-delay: 0.5s;
+}
+
+/* Diseño Responsivo */
+@media (max-width: 1200px) {
+    .boton-cambio-foto {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .boton-inicio-seccion {
+        left: 50%;
+        transform: translateX(-50%);
+        width: 80%;
+    }
+
+    header div {
+        width: 80%;
+        position: relative;
+    }
+
+    #barra-prompt p {
+        font-size: 30px;
+        left: 0;
+        margin-top: 10%;
+    }
+
+    #barra-prompt iframe {
+        width: 100%;
+        left: 0;
+    }
+
+    #barra-prompt textarea {
+        width: 80%;
+        left: 10%;
+    }
+
+    #barra-prompt button {
+        margin-left: 10%;
+    }
+
+    footer img {
+        right: 20%;
+        bottom: 30px;
+    }
+}
+
+@media (max-width: 768px) {
+    .boton-cambio-foto {
+        left: 50%;
+        transform: translateX(-50%);
+        padding: 10px;
+    }
+
+    .boton-inicio-seccion {
+        left: 50%;
+        transform: translateX(-50%);
+        width: 100%;
+    }
+
+    header div {
+        width: 100%;
+        position: relative;
+    }
+
+    #barra-prompt p {
+        font-size: 20px;
+        left: 0;
+        margin-top: 5%;
+    }
+
+    #barra-prompt iframe {
+        width: 100%;
+        height: 300px;
+        left: 0;
+    }
+
+    #barra-prompt textarea {
+        width: 90%;
+        left: 5%;
+    }
+
+    #barra-prompt button {
+        margin-left: 5%;
+    }
+
+    footer img {
+        right: 10%;
+        bottom: 20px;
+    }
+}

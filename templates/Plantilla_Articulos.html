@@ -1,0 +1,72 @@
+{% from "Macros.jinja2" import header, footer %}
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ temas }}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='CSS/Plantilla_Articulos.css') }}">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='IMG/Logo.png') }}" type="image/x-icon">
+</head>
+<body>
+    <header>
+        <div>
+            {% if nombre %}
+                <input type="file" id="file-input" multiple accept="image/*" style="display: none;">
+                <button class="boton-cambio-foto">
+                    <img src="{{ url_for('static', filename='IMG/Foto_De_Perfil.svg') }}" alt="Foto de perfil" height="70" title="Cambiar Foto" id="image-container">
+                </button>
+            {% else %}
+                <button class="boton-inicio-seccion"><a href="{{ url_for('login') }}">Iniciar Sesión</a></button>
+            {% endif %}      
+            <a href="{{ url_for('index') }}"><h1>{{ temas }}</h1></a>
+            <nav>
+                <ul>
+                    <li><a href="{{ url_for('index') }}" id="home">Home</a></li>
+                    <li><a href="{{ url_for('crear_articulo') }}" id="crear-articulo">Crear Artículo</a></li>
+                    <li><a href="{{ url_for('seccion_chatbots') }}" id="seccion-chatbot">Sección de Chatbots</a></li>
+                    <li><a href="{{ url_for('sobre_nosotros') }}" id="sobre-nosostros">Sobre Nosotros</a></li>
+                </ul>
+            </nav>
+            <button id="boton-subir">
+                <a href="#"><img src="{{ url_for('static', filename='IMG/Hacia_Arriba.svg') }}" alt="Ir hacia arriba"></a>
+            </button>
+        </div>
+    </header>
+
+    <main class="animacion">
+        <section>
+            <h2>{{ temas }}</h2>
+            <img src="{{ url_for('static', filename='IMG/Articulo_1.png') }}" alt="Imagen del tema">
+            <article>
+                {% for articulo in articulos_procesados %}
+                    <h3><span>{{ articulo.subtitulo }}</span></h3>
+                    <p>{{ articulo.contenido }}</p>
+                {% endfor %}
+            </article>
+        </section>
+
+        <section id="comentarios">
+            <h2 id="titulo_articulo">{{ temas }}</h2>
+            <form id="formulario-comentario" method="post" action="{{ url_for('agregar_comentario') }}">
+                <input type="hidden" name="tema" value="{{ temas }}">
+                <label for="comentario">Deja tu comentario sobre el tema:</label>
+                <textarea id="comentario" rows="4" placeholder="Escribe tu comentario aquí..." name="comentario"></textarea>
+                <br>
+                <button type="submit">Enviar</button>
+            </form>
+           
+            <div id="seccion-comentarios">
+                {% for comentario in comentarios %}
+                    <div class="comentario">{{ comentario["Comentario"] }}</div>
+                {% endfor %}
+            </div>
+        </section>
+    </main>
+
+    {{ footer() }}
+
+    <script src="{{ url_for('static', filename='JS/Cambiar_Foto.js') }}"></script>
+</body>
+</html>
