@@ -24,7 +24,7 @@ Sigue estos pasos para configurar el proyecto en tu entorno local:
 
 1. **Clonar el Repositorio**
     ```bash
-    git clone https://github.com/usuario/InformatikSpace.git
+    git clone https://github.com/Bredalis/InformatikSpace.git
     cd InformatikSpace
     ```
 
