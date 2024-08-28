@@ -132,28 +132,26 @@ def informatikspace():
             email = request.form.get("correo")
             contraseña = request.form.get("clave")
 
-            if nombre and email and contraseña:
+            # Verificar si el usuario ya existe
+            usuario_existente = coleccion_usuario.find_one({"Email": email})
 
-                # Verificar si el usuario ya existe
-                usuario_existente = coleccion_usuario.find_one({"Email": email})
-
-                if usuario_existente:
-                    # Comparar la contraseña o mostrar un mensaje de error
-                    if usuario_existente["Contraseña"] == contraseña:
-                        session["Usuario"] = usuario_existente["Nombre"]
-                    else:
-                        print("Contraseña incorrecta")
-                        # Redirigir a la página de inicio de sesión con un mensaje de error
-                        return redirect(url_for("login"))
+            if usuario_existente:
+                # Comparar la contraseña o mostrar un mensaje de error
+                if usuario_existente["Contraseña"] == contraseña:
+                    session["Usuario"] = usuario_existente["Nombre"]
                 else:
-                    # Guardar el usuario en la base de datos
-                    coleccion_usuario.insert_one({"Nombre": nombre, "Email": email, 
-                        "Contraseña": contraseña})
-                    
-                    session["Usuario"] = nombre
-                    print("Se enviaron los datos! \U0001F642")
+                    print("Contraseña incorrecta")
+                    # Redirigir a la página de inicio de sesión con un mensaje de error
+                    return redirect(url_for("login"))
+            else:
+                # Guardar el usuario en la base de datos
+                coleccion_usuario.insert_one({"Nombre": nombre, "Email": email, 
+                    "Contraseña": contraseña})
                 
-                return redirect(url_for("index"))
+                session["Usuario"] = nombre
+                print("Se enviaron los datos! \U0001F642")
+            
+            return redirect(url_for("index"))
         return render_template("Inicio_Sesion.html", nombre = session.get("Usuario", ""))
 
     @app.errorhandler(404)

@@ -20,19 +20,19 @@
             <label for="nombre-usuario">Nombre de Usuario: </label>
             <img src="{{ url_for('static', filename='IMG/Usuario.svg') }}" alt="Usuario" height="25">
             <br><br>
-            <input type="text" id="nombre-usuario" name="nombre-usuario" placeholder="ej: Miguel Ubiera">
+            <input type="text" id="nombre-usuario" name="nombre-usuario" placeholder="ej: Miguel Ubiera" required>
 
             <br><br>
             <label for="correo">Correo Electrónico: </label>
             <img src="{{ url_for('static', filename='IMG/Email.svg') }}" alt="Usuario" height="25">
             <br><br>
-            <input type="email" id="correo" name="correo" placeholder="ej: ejemplo@gmail.com">
+            <input type="email" id="correo" name="correo" placeholder="ej: ejemplo@gmail.com" required>
 
             <br><br>
             <label for="contraseña">Contraseña: </label>
             <img src="{{ url_for('static', filename='IMG/Contraseña.svg') }}" alt="Usuario" height="25">
             <br><br>
-            <input type="password" id="contraseña" name="clave" placeholder="******">
+            <input type="password" id="contraseña" name="clave" placeholder="******" required>
 
             <br><br>
             <button type="submit">Iniciar Sesión</button>
