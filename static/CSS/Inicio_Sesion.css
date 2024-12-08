@@ -30,15 +30,15 @@ div {
 	left: 10%;
 }
 
-.primer-contenido h1 {
+header h1 {
 	font-size: 40px;
 }
 
-.primer-contenido p {
+header p {
 	font-size: 20px;
 }
 
-.primer-contenido img {
+header img {
 	max-width: 35%;
 	border-radius: 1rem;
 	float: right;
@@ -110,11 +110,11 @@ form button:hover {
         padding: 15px;
     }
 
-    .primer-contenido {
+    header {
         text-align: center;
     }
 
-    .primer-contenido img {
+    header img {
         max-width: 50%;
         position: static;
         margin: 0 auto;
@@ -139,15 +139,15 @@ form button:hover {
 }
 
 @media (max-width: 480px) {
-    .primer-contenido h1 {
+    header h1 {
         font-size: 30px;
     }
 
-    .primer-contenido p {
+    header p {
         font-size: 16px;
     }
 
-    .primer-contenido img {
+    header img {
         max-width: 70%;
     }
 

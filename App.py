@@ -6,11 +6,11 @@ from datetime import datetime
 import os
 
 def informatikspace():
-
     app = Flask(__name__)
     app.secret_key = os.getenv("SECRET_KEY")
 
-    # Conectar la bbdd 
+    # Conectar la bbdd
+    load_dotenv()
     cliente = MongoClient(os.getenv("CLAVE_MONGO"))
     app.db = cliente["InformatikSpace"]
     coleccion_articulo = app.db["Datos_Articulos"]
@@ -28,21 +28,16 @@ def informatikspace():
         for articulo in coleccion_articulo.find({}).sort("_id", -1)
     ]
 
-    # Obtener los datos de usuario
-    datos_usuarios = [dato["Nombre"] for dato in coleccion_usuario.find({})]
-
-    # Rutas de la pagina
-
+    # Rutas de las páginas
     @app.route("/")
     def index():
         return render_template("index.html", articulos = articulos, 
             enumerate = enumerate, nombre = session.get("Usuario", ""))
 
-    @app.route("/Crear_Articulo", methods = ["GET", "POST"])
+    @app.route("/crear-articulo", methods = ["GET", "POST"])
     def crear_articulo():
 
         if request.method == "POST":
-
             contenido = [request.form.get("contenido")]
             contenido_dividido = [oracion.split("\r\n") for oracion in contenido]
             fecha = datetime.now().strftime("%d/%m/%Y")
@@ -56,12 +51,12 @@ def informatikspace():
 
         return render_template("Crear_Articulo.html", nombre = session.get("Usuario", ""))
 
-    @app.route("/Mis_Articulos")
+    @app.route("/mis-artículos")
     def mis_articulos():
         return render_template("Mis_Articulos.html", articulos = articulos, 
             nombre = session.get("Usuario", ""))
 
-    @app.route("/borrar_articulo/<titulo_articulo>", methods = ["POST"])
+    @app.route("/borrar-artículo/<titulo_articulo>", methods = ["POST"])
     def borrar_articulo(titulo_articulo):
         
         # Eliminar el artículo de la colección basado en su tema
@@ -78,7 +73,6 @@ def informatikspace():
         articulo_encontrado = next((articulo for articulo in articulos if articulo["tema"] == titulo_articulo), None)
         
         if articulo_encontrado:
-
             # Dividir los subtitulos y los contenidos
             contenido = articulo_encontrado["contenido"][0]
 
@@ -101,9 +95,8 @@ def informatikspace():
         else:
             abort(404)
 
-    # Seccion de comentarios
-
-    @app.route("/Agregar_Comentario", methods = ["POST"])
+    # Sección de comentarios
+    @app.route("/agregar-comentario", methods = ["POST"])
     def agregar_comentario():
         comentario = request.form.get("comentario")
         tema = request.form.get("tema")
@@ -115,19 +108,18 @@ def informatikspace():
         
         return redirect(url_for("pagina_articulo", titulo_articulo = tema))
 
-    @app.route("/Seccion_Chatbots")
+    @app.route("/seccion-chatbots")
     def seccion_chatbots():
         return render_template("Seccion_Chatbots.html", nombre = session.get("Usuario", ""))
 
-    @app.route("/Sobre_Nosotros")
+    @app.route("/sobre-nosotros")
     def sobre_nosotros():
         return render_template("Sobre_Nosotros.html", nombre = session.get("Usuario", ""))
 
-    @app.route("/Login", methods = ["GET", "POST"])
+    @app.route("/login", methods = ["GET", "POST"])
     def login():
 
         if request.method == "POST":
-
             nombre = request.form.get("nombre-usuario")
             email = request.form.get("correo")
             contraseña = request.form.get("clave")

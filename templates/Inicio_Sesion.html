@@ -8,14 +8,13 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='CSS/Inicio_Sesion.css') }}">
 </head>
 <body>
+    <header>
+        <h1>InformatikSpace</h1>
+        <p>Únete a los usuarios que son <br> parte de InformatikSpace</p>
+        <img src="{{ url_for('static', filename='IMG/Inicio_Sesion.jpg') }}" alt="Inicio Sesión">
+    </header>
+
     <main>
-        <div class="primer-contenido">
-            <h1>InformatikSpace</h1>
-            <p>Únete a los usuarios que son <br> parte de InformatikSpace</p>
-
-            <img src="{{ url_for('static', filename='IMG/Inicio_Sesion.jpg') }}" alt="Inicio Sesión">
-        </div>
-
         <form action="{{ url_for('login') }}" method="POST" class="segundo-contenido">
             <label for="nombre-usuario">Nombre de Usuario: </label>
             <img src="{{ url_for('static', filename='IMG/Usuario.svg') }}" alt="Usuario" height="25">

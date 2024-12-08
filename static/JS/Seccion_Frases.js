@@ -1,8 +1,8 @@
 
 // Conetidos de la seccion frases
 const imgs = [
-    "/static/IMG/Conexiones.jpg", "/static/IMG/Crecimiento.jpg", 
-    "/static/IMG/Aprendizaje.jpg", "/static/IMG/Apoyo.jpg", "/static/IMG/Logros.jpg"
+    "Conexiones", "Crecimiento", 
+    "Aprendizaje", "Apoyo", "Logros"
 ];
 
 const temas = [
@@ -30,7 +30,7 @@ function botonDerecho() {
     seccion.classList.add("fade-out");
 
     setTimeout(() => {
-        imagen.src = imgs[contador];
+        imagen.src = `/static/IMG/${imgs[contador]}.jpg`;
         frase.innerHTML = frases[contador];
         tema.innerHTML = "<span>Tema:</span> " + temas[contador];
 
@@ -46,7 +46,7 @@ function botonIzquierdo() {
     setTimeout(() => {
         contador > 0 ? contador-- : contador = imgs.length - 1;
 
-        imagen.src = imgs[contador];
+        imagen.src = `/static/IMG/${imgs[contador]}.jpg`;
         frase.innerHTML = frases[contador];
         tema.innerHTML = "<span>Tema:</span> " + temas[contador];
 

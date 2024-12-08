@@ -27,7 +27,7 @@ document.addEventListener("DOMContentLoaded", function() {
         reader.readAsDataURL(file);
     }
 
-    // Manejar clic en el botón de cambio de foto
+    // Manejar click en el botón de cambio de foto
     botonCambioFoto.addEventListener("click", function() {
         fileInput.click();
     });
